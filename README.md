@@ -25,27 +25,27 @@ Goal was to build a real world social media platform which can be highly scalabl
   - Google Auth
   
 ## Services
-  ### Total Number of Services: 07
+  ##### Total Number of Services: 07
   
-  ### API Gateway:
+  #### API Gateway:
     - single entry point to the sytem
     - responsible for authorization of requests
     - route requests to the other services
   
-  ### Auth service:
+  #### Auth service:
     - handle user's authentication
     
-  ### Follow service:
+  #### Follow service:
     - handle user connections
     
-  ### Like service:
+  #### Like service:
     - manages user likings
     
-  ### News feed service:
+  #### News feed service:
     - generate users's news feed
     
-  ### Post service:
+  #### Post service:
     - handle user's posts
     
-  ### Profile service:
+  #### Profile service:
     - manages user's profile
