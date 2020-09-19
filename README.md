@@ -24,10 +24,10 @@ Goal was to build a real world social media platform which can be highly scalabl
   - Amazon SNS
   - Google Auth
   
-## Services
+## Services:
   ##### Total Number of Services: 07
   
-  #### API Gateway:
+  #### API gateway:
     - single entry point to the sytem
     - responsible for authorization of requests
     - route requests to the other services
@@ -49,3 +49,7 @@ Goal was to build a real world social media platform which can be highly scalabl
     
   #### Profile service:
     - manages user's profile
+    
+ 
+## Data flow:
+  Every request first hit API gateway, gateway check for the data in remote cache if found then will return in response otherwise will forward the request to the respective       service which will return the data to gateway while asynchronously writing into the cache.
