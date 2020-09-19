@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package AuthPackage;
+
+service Auth {
+    rpc authenticateUser(IdToken) returns (AuthState);
+    rpc reissueToken(Payload) returns (AuthState);
+}
+
+message IdToken {
+    string idToken = 1;
+}
+
+message AuthState {
+    bool success = 1;
+    string token = 2;
+}
+
+message Payload {
+    string id = 1;
+    string email = 2;
+}

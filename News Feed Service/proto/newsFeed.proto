@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package NewsFeedPackage;
+
+service NewsFeed {
+    rpc getNewsFeed(params) returns (newsFeed);
+}
+
+message params {
+    string userid = 1;
+    string timestamp = 2;
+}
+
+message newsFeed {
+    bool success = 1;
+    repeated string postids = 2;
+}

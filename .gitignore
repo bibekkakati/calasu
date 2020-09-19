@@ -1,0 +1,26 @@
+/Api\ Gateway/node_modules
+/Api\ Gateway/keys
+/Api\ Gateway/.env
+
+/Auth\ Service/node_modules
+/Auth\ Service/keys
+/Auth\ Service/.env
+
+/Follow\ Service/node_modules
+/Follow\ Service/.env
+
+/Like\ Service/node_modules
+/Like\ Service/.env
+
+/News\ Feed\ Service/node_modules
+/News\ Feed\ Service/.env
+
+/Post\ Service/node_modules
+/Post\ Service/.env
+
+/Profile\ Service/node_modules
+/Profile\ Service/.env
+
+/scripts
+
+.gitgnore

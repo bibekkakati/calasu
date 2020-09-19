@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package FollowPackage;
+
+service Follow {
+    rpc getFollowers(UserId) returns (FollowersIds);
+    rpc getFollowings(UserId) returns (FolloweesIds);
+    rpc getFollowState(UserFollower) returns (FollowState);
+}
+
+message UserId {
+    string userid = 1;
+}
+
+message UserFollower {
+    string userid = 1;
+    string otherUserId = 2;
+}
+
+message FollowersArrStruct {
+        string followerid = 1;
+        string timestamp = 2;
+    }
+
+message FollowersIds {
+    bool success = 1;
+    repeated FollowersArrStruct userIdList = 2;
+}
+
+message FolloweesArrStruct {
+        string followeeid = 1;
+        string timestamp = 2;
+    }
+
+message FolloweesIds {
+    bool success = 1;
+    repeated FolloweesArrStruct userIdList = 2;
+}
+
+message FollowState {
+    bool success = 1;
+    bool following = 2;
+}

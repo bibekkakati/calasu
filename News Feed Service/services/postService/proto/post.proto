@@ -1,0 +1,81 @@
+syntax = "proto3";
+
+package PostPackage;
+
+service Post {
+    rpc uploadBlog (UploadBlogParams) returns (UploadResponse);
+    rpc uploadPhoto (UploadPhotoParams) returns (UploadResponse);
+    rpc getPost (GetPostParams) returns (GetPostResponse);
+    rpc getTimelineByUserId (GetTimelineParams) returns (GetTimelineResponse);
+    rpc updateBlog (UploadBlogParams) returns (UpdateBlogResponse);
+    rpc deletePost (DeletePostParams) returns (DeletePostResponse);
+}
+
+message UserId {
+    string userid = 1;
+}
+
+message DeletePostParams {
+    string userid = 1;
+    string postid = 2;
+}
+
+message GetTimelineParams {
+    string userid = 1;
+    string offset = 2;
+    string limit = 3;
+}
+
+message UploadBlogParams {
+    string userid = 1;
+    string postid = 2;
+    string title = 3;
+    string category = 4;
+    bool getImagePostUrl = 5;
+    bool getBlogPostUrl = 6;
+}
+
+message UploadPhotoParams {
+    string userid = 1;
+    string category = 2;
+}
+
+message UploadResponse {
+    bool success = 1;
+    string imagePostUrl = 2;
+    string blogPostUrl = 3;
+}
+
+message UpdateBlogResponse {
+    bool success = 1;
+    string blogPostUrl = 2;
+}
+
+message GetPostParams {
+    string userid = 1;
+    string postid = 2;
+}
+
+message GetPostResponse {
+    bool success = 1;
+    string postid = 2;
+    string userid = 3;
+    string title = 4;
+    string category = 5;
+    string imageUrl = 6;
+    string blogUrl = 7;
+    int32 views = 8;
+    int32 likes = 9;
+    string timestamp = 10;
+}
+
+
+message GetTimelineResponse {
+    bool success = 1;
+    repeated string posts = 2;
+    repeated string timestamps = 3;
+}
+
+message DeletePostResponse {
+    bool success = 1;
+}
